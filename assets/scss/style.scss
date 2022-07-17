@@ -1,0 +1,328 @@
+
+
+
+body {
+    background-color: black;
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+    border-color: green;
+    
+}
+
+
+.container{
+  display: flex;
+  border: 0 solid green;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pageintro{
+    color: antiquewhite;
+    margin: 0;
+    position: relative;
+    border: 0em solid orange;
+    overflow:auto;
+    max-width: 40em;
+    
+}
+
+
+
+
+
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  position: relative;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end 10 normal forwards;
+    
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+  100% { border-color: transparent }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.buttonDiv{
+  border: 0 solid orange;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  
+}
+
+$bg: #2f2f2f;
+$fg: #076143;
+$border-width: .5rem;
+$corner-size: 3rem;
+$dur: .3s;
+
+
+
+
+
+
+.findstock {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .02rem;
+  cursor: pointer;
+  background: transparent;
+  border: $border-width solid currentColor;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  color: $fg;
+  position: relative;
+  transition: color $dur;
+
+ 
+  
+  &:hover {
+    color: rgb(255, 187, 0);
+    &::before { width: 0; }
+    &::after { height: 0; }
+  }
+  &:active {
+    border-width: $border-width / 2;
+  }
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    background: $bg;
+    z-index: -1;
+    transition: all $dur;
+  }
+  //the 101% is because of a pixel rounding issue in firefox
+  &::before {
+    width: calc(100% - #{$corner-size});
+    height: calc(101% + #{$border-width * 2});
+    top: -$border-width;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    height: calc(100% - #{$corner-size});
+    width: calc(101% + #{$border-width * 2});
+    left: -$border-width;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+
+
+/* Code for Results Type */
+.css-typing p {
+  border-right: .15em solid orange;
+  font-family: "Courier";
+  font-size: 14px;
+  overflow: hidden;
+  
+}
+.css-typing p:nth-child(1) {
+  width: 20em;
+  -webkit-animation: type 2s steps(60, end);
+  animation: type 2s steps(60, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+}
+
+.css-typing p:nth-child(2) {
+  width: 30em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(60, end);
+  animation: type2 2s steps(60, end);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+}
+
+.css-typing p:nth-child(3) {
+  width: 20em;
+  opacity: 0;
+  -webkit-animation: type3 4s steps(40, end);
+  animation: type3 4s steps(40, end);
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+}
+.css-typing p:nth-child(4) {
+  opacity: 0;
+  -webkit-animation: fadein 6s steps(100, end);
+  animation: fadein 6s steps(100, end);
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  max-width: 40em;
+  /* This works but need the animination update inline-size: 10em;
+  overflow-wrap: break-word;
+
+  */
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+  
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+  
+}
+
+@keyframes fadein {
+  from { opacity: 0;
+    border: none; }
+  to   { opacity: 1; 
+    border: none;
+    overflow: visible;
+    
+  
+  }
+  
+}
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+
+/*Text at the start of the results section */
+.startText{
+  size: 54em;
+}
