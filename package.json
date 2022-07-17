@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@polygon.io/client-js": "^6.0.3"
+  }
+}
